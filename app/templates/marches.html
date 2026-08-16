@@ -1,55 +1,59 @@
 {% extends "base.html" %}
-{% block title %}Marchés — Boursoum{% endblock %}
+{% block title %}Markets — Boursoum{% endblock %}
 {% block content %}
-<section class="page-header">
-    <h1>Aperçu des marchés</h1>
-    <p>Suivi des principaux indices, actions et matières premières.</p>
-</section>
-
-<section class="market-grid">
-    <div class="market-card">
-        <div class="market-header">
-            <span class="market-name">CAC 40</span>
-            <span class="market-change positive">+0.82%</span>
-        </div>
-        <span class="market-value">7 542,10</span>
-    </div>
-    <div class="market-card">
-        <div class="market-header">
-            <span class="market-name">S&amp;P 500</span>
-            <span class="market-change positive">+1.14%</span>
-        </div>
-        <span class="market-value">5 820,45</span>
-    </div>
-    <div class="market-card">
-        <div class="market-header">
-            <span class="market-name">Nasdaq</span>
-            <span class="market-change negative">-0.35%</span>
-        </div>
-        <span class="market-value">18 210,90</span>
-    </div>
-    <div class="market-card">
-        <div class="market-header">
-            <span class="market-name">Nikkei 225</span>
-            <span class="market-change positive">+0.47%</span>
-        </div>
-        <span class="market-value">39 105,60</span>
-    </div>
-    <div class="market-card">
-        <div class="market-header">
-            <span class="market-name">Or (once)</span>
-            <span class="market-change positive">+0.21%</span>
-        </div>
-        <span class="market-value">2 385,70 $</span>
-    </div>
-    <div class="market-card">
-        <div class="market-header">
-            <span class="market-name">Bitcoin</span>
-            <span class="market-change negative">-1.05%</span>
-        </div>
-        <span class="market-value">61 240,00 $</span>
+<section class="page-header container">
+    <div class="page-header-inner">
+        <h1>Global market overview</h1>
+        <p>Monitor the main indices, sectors, commodities and digital assets in one clean view.</p>
     </div>
 </section>
 
-<p class="disclaimer">Données affichées à titre d'exemple, non connectées à un flux boursier en temps réel.</p>
+<section class="container">
+    <div class="market-grid">
+        <div class="market-card">
+            <div class="market-header">
+                <span class="market-name">CAC 40</span>
+                <span class="market-change positive">+0.82%</span>
+            </div>
+            <div class="market-value">7 542,10</div>
+        </div>
+        <div class="market-card">
+            <div class="market-header">
+                <span class="market-name">S&amp;P 500</span>
+                <span class="market-change positive">+1.14%</span>
+            </div>
+            <div class="market-value">5 820,45</div>
+        </div>
+        <div class="market-card">
+            <div class="market-header">
+                <span class="market-name">Nasdaq</span>
+                <span class="market-change negative">-0.35%</span>
+            </div>
+            <div class="market-value">18 210,90</div>
+        </div>
+        <div class="market-card">
+            <div class="market-header">
+                <span class="market-name">Nikkei 225</span>
+                <span class="market-change positive">+0.47%</span>
+            </div>
+            <div class="market-value">39 105,60</div>
+        </div>
+        <div class="market-card">
+            <div class="market-header">
+                <span class="market-name">Gold</span>
+                <span class="market-change positive">+0.21%</span>
+            </div>
+            <div class="market-value">$2 385,70</div>
+        </div>
+        <div class="market-card">
+            <div class="market-header">
+                <span class="market-name">Bitcoin</span>
+                <span class="market-change negative">-1.05%</span>
+            </div>
+            <div class="market-value">$61 240,00</div>
+        </div>
+    </div>
+
+    <p class="disclaimer">Sample market values only. This dashboard is a front-end prototype for a financial product experience.</p>
+</section>
 {% endblock %}

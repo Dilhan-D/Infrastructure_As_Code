@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Boursoum{% endblock %}</title>
+    <meta name="description" content="Plateforme financière premium pour suivre les marchés et les performances des actifs.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
@@ -15,20 +16,26 @@
                 <span class="brand-mark">M</span>
                 <span class="brand-name">Boursoum</span>
             </a>
-            <nav class="nav-links">
-                <a href="{{ url_for('home') }}" class="{{ 'active' if active == 'home' }}">Accueil</a>
-                <a href="{{ url_for('marches') }}" class="{{ 'active' if active == 'marches' }}">Marchés</a>
-                <a href="{{ url_for('apropos') }}" class="{{ 'active' if active == 'apropos' }}">À propos</a>
+
+            <nav class="nav-links" aria-label="Navigation principale">
+                <a href="{{ url_for('home') }}" class="{{ 'active' if active == 'home' }}">Overview</a>
+                <a href="{{ url_for('marches') }}" class="{{ 'active' if active == 'marches' }}">Markets</a>
+                <a href="{{ url_for('apropos') }}" class="{{ 'active' if active == 'apropos' }}">Company</a>
                 <a href="{{ url_for('contact') }}" class="{{ 'active' if active == 'contact' }}">Contact</a>
             </nav>
-            <button class="burger" id="burger" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
+
+            <div class="nav-actions">
+                <a href="{{ url_for('contact') }}" class="btn btn-secondary">Support</a>
+                <button class="burger" id="burger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-        <nav class="nav-mobile" id="navMobile">
-            <a href="{{ url_for('home') }}">Accueil</a>
-            <a href="{{ url_for('marches') }}">Marchés</a>
-            <a href="{{ url_for('apropos') }}">À propos</a>
+
+        <nav class="nav-mobile" id="navMobile" aria-label="Navigation mobile">
+            <a href="{{ url_for('home') }}">Overview</a>
+            <a href="{{ url_for('marches') }}">Markets</a>
+            <a href="{{ url_for('apropos') }}">Company</a>
             <a href="{{ url_for('contact') }}">Contact</a>
         </nav>
     </header>

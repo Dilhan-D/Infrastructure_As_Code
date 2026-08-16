@@ -1,53 +1,357 @@
 {% extends "base.html" %}
-{% block title %}Boursoum — Suivez les marchés en temps réel{% endblock %}
+{% block title %}Boursoum — Market overview{% endblock %}
 {% block content %}
-<section class="hero">
-    <div class="hero-content">
-        <span class="badge">Nouveau · Édition 2026</span>
-        <h1>Les marchés financiers,<br>en un coup d'œil.</h1>
-        <p class="hero-subtitle">
-            Boursoum vous offre une vue claire et épurée sur les tendances boursières mondiales,
-            pensée pour les investisseurs exigeants.
-        </p>
-        <div class="hero-actions">
-            <a href="{{ url_for('marches') }}" class="btn btn-primary">Voir les marchés</a>
-            <a href="{{ url_for('apropos') }}" class="btn btn-secondary">En savoir plus</a>
+<section class="hero container">
+    <div class="hero-wrap">
+        <div class="hero-panel">
+            <span class="badge">Live market pulse · 2026</span>
+            <h1>Markets, simplified for sharper decisions.</h1>
+            <p class="hero-subtitle">
+                Follow global indices, macro trends and crypto momentum in a single high-clarity view designed for fast decision making.
+            </p>
+            <div class="hero-actions">
+                <a href="{{ url_for('marches') }}" class="btn btn-primary">Explore markets</a>
+                <a href="{{ url_for('apropos') }}" class="btn btn-secondary">Our approach</a>
+            </div>
+            <div class="mini-quote">
+                <span class="dot"></span>
+                <span>Risk sentiment is improving across major equity markets this session.</span>
+            </div>
+        </div>
+
+        <aside class="surface-panel market-overview">
+            <div class="section-header">
+                <h2>Market movers</h2>
+                <span class="section-subtitle">Today</span>
+            </div>
+            <div class="market-strip">
+                <div class="market-row">
+                    <div class="market-pair">
+                        <span class="market-name">NASDAQ</span>
+                    </div>
+                    <div class="market-value positive">+1.24%</div>
+                </div>
+                <div class="market-row">
+                    <div class="market-pair">
+                        <span class="market-name">DAX</span>
+                    </div>
+                    <div class="market-value positive">+0.88%</div>
+                </div>
+                <div class="market-row">
+                    <div class="market-pair">
+                        <span class="market-name">WTI</span>
+                    </div>
+                    <div class="market-value negative">-0.42%</div>
+                </div>
+                <div class="market-row">
+                    <div class="market-pair">
+                        <span class="market-name">BTC</span>
+                    </div>
+                    <div class="market-value positive">+2.13%</div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</section>
+
+<section class="section container">
+    <div class="section-header">
+        <h2>Snapshot</h2>
+        <span class="section-subtitle">Key market signals</span>
+    </div>
+
+    <div class="stat-grid">
+        <div class="stat-card">
+            <div class="stat-topline">
+                <span>Indices</span>
+                <span class="positive">+0.8%</span>
+            </div>
+            <div class="stat-value">120</div>
+            <div class="stat-label">Tracked worldwide</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-topline">
+                <span>Sentiment</span>
+                <span class="positive">Bullish</span>
+            </div>
+            <div class="stat-value">64</div>
+            <div class="stat-label">Risk-on score</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-topline">
+                <span>Volatility</span>
+                <span class="neutral">Normal</span>
+            </div>
+            <div class="stat-value">12.4</div>
+            <div class="stat-label">VIX index</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-topline">
+                <span>Availability</span>
+                <span class="positive">99.9%</span>
+            </div>
+            <div class="stat-value">24/7</div>
+            <div class="stat-label">Continuous monitoring</div>
         </div>
     </div>
 </section>
 
-<section class="stats">
-    <div class="stat-card">
-        <span class="stat-value">+120</span>
-        <span class="stat-label">Indices suivis</span>
-    </div>
-    <div class="stat-card">
-        <span class="stat-value">24/7</span>
-        <span class="stat-label">Mise à jour continue</span>
-    </div>
-    <div class="stat-card">
-        <span class="stat-value">99.9%</span>
-        <span class="stat-label">Disponibilité</span>
+<section class="section container">
+    <div class="dashboard-grid">
+        <div class="board-card">
+            <div class="board-header">
+                <h3>Performance overview</h3>
+                <div class="segment-tabs" aria-label="Périodes">
+                    <button class="active" type="button">1D</button>
+                    <button type="button">1W</button>
+                    <button type="button">1M</button>
+                    <button type="button">1Y</button>
+                </div>
+            </div>
+            <div class="chart-box" aria-label="Courbe de performance d'un indice">
+                <svg viewBox="0 0 400 240" preserveAspectRatio="none" role="img" aria-label="Performance line chart">
+                    <defs>
+                        <linearGradient id="fillMain" x1="0" x2="0" y1="0" y2="1">
+                            <stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.30"/>
+                            <stop offset="100%" stop-color="#6ee7b7" stop-opacity="0.01"/>
+                        </linearGradient>
+                    </defs>
+                    <g opacity="0.18" stroke="#94a3b8" stroke-width="1">
+                        <line x1="0" x2="400" y1="30" y2="30"/>
+                        <line x1="0" x2="400" y1="90" y2="90"/>
+                        <line x1="0" x2="400" y1="150" y2="150"/>
+                        <line x1="0" x2="400" y1="210" y2="210"/>
+                    </g>
+                    <path d="M0,170 C50,140 90,120 115,140 S180,100 220,118 S300,40 400,65 L400,240 L0,240 Z" fill="url(#fillMain)"/>
+                    <path d="M0,170 C50,140 90,120 115,140 S180,100 220,118 S300,40 400,65" fill="none" stroke="#6ee7b7" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+
+        <aside class="watchlist-card">
+            <h3>Top gainers</h3>
+            <div class="watchlist-list">
+                <div class="watchlist-item">
+                    <div class="instrument">
+                        <span class="symbol-badge">NVDA</span>
+                        <span>NVIDIA</span>
+                    </div>
+                    <span class="positive">+3.42%</span>
+                    <span class="market-value">$114.9</span>
+                </div>
+                <div class="watchlist-item">
+                    <div class="instrument">
+                        <span class="symbol-badge">AMD</span>
+                        <span>AMD</span>
+                    </div>
+                    <span class="positive">+2.06%</span>
+                    <span class="market-value">$171.3</span>
+                </div>
+                <div class="watchlist-item">
+                    <div class="instrument">
+                        <span class="symbol-badge">MSFT</span>
+                        <span>Microsoft</span>
+                    </div>
+                    <span class="positive">+1.81%</span>
+                    <span class="market-value">$463.2</span>
+                </div>
+            </div>
+        </aside>
     </div>
 </section>
 
-<section class="features">
-    <h2>Pourquoi Boursoum</h2>
-    <div class="feature-grid">
-        <div class="feature-card">
-            <div class="feature-icon">📈</div>
-            <h3>Données claires</h3>
-            <p>Des graphiques épurés pour comprendre les tendances en un instant.</p>
+<section class="section container">
+    <div class="market-data-grid">
+        <div class="panel-card table-panel">
+            <div class="watchlist-head">
+                <h3>Trending crypto</h3>
+                <span class="section-subtitle">24h</span>
+            </div>
+
+            <table class="market-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Asset</th>
+                        <th>Price</th>
+                        <th>24h</th>
+                        <th>Market cap</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <div class="asset-name">
+                                <span class="crypto-logo btc">B</span>
+                                <span>Bitcoin</span>
+                            </div>
+                        </td>
+                        <td>$61,240.00</td>
+                        <td class="negative">-1.05%</td>
+                        <td>$1.21T</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <div class="asset-name">
+                                <span class="crypto-logo eth">E</span>
+                                <span>Ethereum</span>
+                            </div>
+                        </td>
+                        <td>$3,410.00</td>
+                        <td class="positive">+0.64%</td>
+                        <td>$409B</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <div class="asset-name">
+                                <span class="crypto-logo sol">S</span>
+                                <span>Solana</span>
+                            </div>
+                        </td>
+                        <td>$166.40</td>
+                        <td class="positive">+1.92%</td>
+                        <td>$77B</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <div class="asset-name">
+                                <span class="crypto-logo xrp">X</span>
+                                <span>XRP</span>
+                            </div>
+                        </td>
+                        <td>$0.62</td>
+                        <td class="positive">+0.45%</td>
+                        <td>$35B</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <div class="asset-name">
+                                <span class="crypto-logo doge">D</span>
+                                <span>Dogecoin</span>
+                            </div>
+                        </td>
+                        <td>$0.18</td>
+                        <td class="negative">-0.66%</td>
+                        <td>$26B</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Rapide</h3>
-            <p>Une interface légère, pensée pour la performance et la simplicité.</p>
+
+        <div class="kpi-stack">
+            <div class="panel-card kpi-box">
+                <div class="label">Market breadth</div>
+                <div class="value positive">56.2%</div>
+                <div class="section-subtitle">Advancers / decliners</div>
+            </div>
+            <div class="panel-card kpi-box">
+                <div class="label">Macro watch</div>
+                <div class="value">Fed</div>
+                <div class="section-subtitle">Speech in 2h · hawkish bias</div>
+            </div>
+            <div class="panel-card kpi-box">
+                <div class="label">Sector trend</div>
+                <div class="value positive">Technology</div>
+                <div class="section-subtitle">+1.18% today</div>
+            </div>
         </div>
-        <div class="feature-card">
-            <div class="feature-icon">🔒</div>
-            <h3>Fiable</h3>
-            <p>Une infrastructure robuste construite pour durer dans le temps.</p>
+    </div>
+</section>
+
+<section class="section container">
+    <div class="section-header">
+        <h2>Market structure</h2>
+        <span class="section-subtitle">By category</span>
+    </div>
+
+    <div class="stat-grid">
+        <div class="panel-card">
+            <h3>Indices</h3>
+            <div class="market-list">
+                <div class="market-list-item">
+                    <span class="instrument"><span class="symbol-badge">CAC</span> CAC 40</span>
+                    <span class="market-value">7 542</span>
+                    <span class="positive">+0.82%</span>
+                </div>
+                <div class="market-list-item">
+                    <span class="instrument"><span class="symbol-badge">SPX</span> S&amp;P 500</span>
+                    <span class="market-value">5 820</span>
+                    <span class="positive">+1.14%</span>
+                </div>
+                <div class="market-list-item">
+                    <span class="instrument"><span class="symbol-badge">NDQ</span> Nasdaq</span>
+                    <span class="market-value">18 210</span>
+                    <span class="negative">-0.35%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-card">
+            <h3>Commodities</h3>
+            <div class="market-list">
+                <div class="market-list-item">
+                    <span class="instrument"><span class="symbol-badge">GC</span> Gold</span>
+                    <span class="market-value">$2 385</span>
+                    <span class="positive">+0.21%</span>
+                </div>
+                <div class="market-list-item">
+                    <span class="instrument"><span class="symbol-badge">CL</span> Oil</span>
+                    <span class="market-value">$74.6</span>
+                    <span class="negative">-0.95%</span>
+                </div>
+                <div class="market-list-item">
+                    <span class="instrument"><span class="symbol-badge">SI</span> Silver</span>
+                    <span class="market-value">$28.7</span>
+                    <span class="positive">+0.38%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-card">
+            <h3>FX</h3>
+            <div class="market-list">
+                <div class="market-list-item">
+                    <span class="instrument"><span class="symbol-badge">EUR</span> EUR/USD</span>
+                    <span class="market-value">1.0834</span>
+                    <span class="positive">+0.12%</span>
+                </div>
+                <div class="market-list-item">
+                    <span class="instrument"><span class="symbol-badge">JPY</span> USD/JPY</span>
+                    <span class="market-value">148.6</span>
+                    <span class="negative">-0.18%</span>
+                </div>
+                <div class="market-list-item">
+                    <span class="instrument"><span class="symbol-badge">GBP</span> GBP/USD</span>
+                    <span class="market-value">1.2762</span>
+                    <span class="positive">+0.22%</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-card">
+            <h3>Crypto</h3>
+            <div class="market-list">
+                <div class="market-list-item">
+                    <span class="instrument"><span class="symbol-badge">BTC</span> Bitcoin</span>
+                    <span class="market-value">$61 240</span>
+                    <span class="negative">-1.05%</span>
+                </div>
+                <div class="market-list-item">
+                    <span class="instrument"><span class="symbol-badge">ETH</span> Ethereum</span>
+                    <span class="market-value">$3 410</span>
+                    <span class="positive">+0.64%</span>
+                </div>
+                <div class="market-list-item">
+                    <span class="instrument"><span class="symbol-badge">SOL</span> Solana</span>
+                    <span class="market-value">$166.4</span>
+                    <span class="positive">+1.92%</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>

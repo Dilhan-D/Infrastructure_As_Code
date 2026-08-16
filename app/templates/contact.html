@@ -1,23 +1,43 @@
 {% extends "base.html" %}
 {% block title %}Contact — Boursoum{% endblock %}
 {% block content %}
-<section class="page-header">
-    <h1>Contactez-nous</h1>
-    <p>Une question, une suggestion ? Écrivez-nous.</p>
+<section class="page-header container">
+    <div class="page-header-inner">
+        <h1>Talk to our team.</h1>
+        <p>Questions, feedback or partnership requests — we’d be happy to hear from you.</p>
+    </div>
 </section>
 
-<section class="contact-form-wrapper">
-    <form class="contact-form" action="#" method="post">
-        <label for="name">Nom</label>
-        <input type="text" id="name" name="name" placeholder="Votre nom">
+<section class="container contact-grid">
+    <aside class="contact-side">
+        <div class="info-card">
+            <span class="info-label">Email</span>
+            <div class="info-value">hello@boursoum.io</div>
+        </div>
+        <div class="info-card">
+            <span class="info-label">Office</span>
+            <div class="info-value">Paris · London · New York</div>
+        </div>
+        <div class="info-card">
+            <span class="info-label">Support</span>
+            <div class="info-value">Fast response within 24 hours</div>
+        </div>
+    </aside>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="vous@exemple.com">
+    <div class="contact-form-wrapper">
+        <h2>Send a message</h2>
+        <form class="contact-form" action="#" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name">
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Votre message..."></textarea>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com">
 
-        <button type="submit" class="btn btn-primary">Envoyer</button>
-    </form>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your message..."></textarea>
+
+            <button type="submit" class="btn btn-primary">Send inquiry</button>
+        </form>
+    </div>
 </section>
 {% endblock %}
