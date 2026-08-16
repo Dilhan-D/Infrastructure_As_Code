@@ -25,7 +25,23 @@ def home():
         app_name=app_name,
         python_version=platform.python_version(),
         timestamp=timestamp,
+        active="home",
     )
+
+
+@app.route("/marches")
+def marches():
+    return render_template("marches.html", active="marches")
+
+
+@app.route("/apropos")
+def apropos():
+    return render_template("apropos.html", active="apropos")
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html", active="contact")
 
 
 if __name__ == "__main__":
