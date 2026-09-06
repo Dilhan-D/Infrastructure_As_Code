@@ -27,12 +27,16 @@ services:
     restart: always
     depends_on:
       - db
+    env_file:
+      - .env
     environment:
       APP_ENV: ${APP_ENV}
       APP_NAME: ${APP_NAME}
       NOM: ${NOM}
       PORT: ${APP_PORT}
       FLASK_DEBUG: ${FLASK_DEBUG}
+      MARKET_API_KEY: ${MARKET_API_KEY}
+      MARKET_PROVIDER: ${MARKET_PROVIDER}
     ports:
       - "${APP_PORT}:5000"
 
