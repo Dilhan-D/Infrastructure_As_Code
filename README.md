@@ -15,6 +15,36 @@ The project includes a Python application with an HTML interface designed to con
 
 This is an ongoing learning process. this repository will evolve as I explore new tools, best practices, and automation techniques.
 
+## Demarrage local
+
+Copiez `.env.example` vers `.env`, adaptez les valeurs, puis lancez :
+
+```bash
+docker compose -f docker/compose.yaml up --build
+```
+
+L'application est disponible sur `http://localhost:5000` et Adminer sur `http://localhost:8080`.
+
+## Kubernetes
+
+Construisez l'image, rendez-la disponible dans votre cluster local, puis appliquez les manifests :
+
+```bash
+docker build -t boursoum:latest -f docker/Dockerfile_app .
+kubectl apply -k k8s/
+kubectl get pods -n boursoum
+```
+
+Le mot de passe Kubernetes dans `k8s/config.yaml` est un exemple à remplacer avant un déploiement réel.
+
+## Ansible
+
+Le playbook `ansible/deploy.yml` installe Docker sur l'hôte cible et démarre le Compose :
+
+```bash
+ansible-playbook -i ansible/inventory.ini ansible/deploy.yml --ask-become-pass
+```
+
 ---
 
 *Note: This project is constantly evolving and subject to change. Components may be modified, improved, or removed as my learning progresses and best practices are applied.*
